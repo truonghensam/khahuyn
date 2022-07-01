@@ -93,6 +93,23 @@ $(document).ready(function () {
     m++
   });
 
+  function confirmYes() {
+    var audio = new Audio("sound/tick.mp3");
+    audio.play();
+    Swal.fire({
+      title: "T beo cũng iu KH nhất",
+      text: "Anh có chiếc video này muốn gửi đến em này...",
+      imageUrl: "img/tom-jerry.png",
+      imageWidth: 300,
+      imageHeight: 300,
+      background: '#fff url("img/iput-bg.jpg")',
+      imageAlt: "Custom image",
+      confirmButtonText: "Xem luôn",
+    }).then(function () {
+      window.location = "./img/tiktok.mp4"
+    });
+  }
+
   var p = 0;
   function confirmNo() {
     if(p == 8){
@@ -106,8 +123,8 @@ $(document).ready(function () {
         imageAlt: "Custom image",
         type: "input",
         showCancelButton: true,
-        confirmButtonColor: "#f6cd61",
-        cancelButtonColor: "#fe8a71",
+        confirmButtonColor: "#EA4C89",
+        cancelButtonColor: "#66ea4c",
         confirmButtonText: "Đùa thôi vẫn còn iu nhắm",
         cancelButtonText: "Hết iu thật rồi",
         closeOnConfirm: false,
@@ -117,7 +134,7 @@ $(document).ready(function () {
       }).then(function (result) {
         if(result.isConfirmed === true) {
           setTimeout(function () {
-            alert("Anh cũng iu em nhắm");
+            confirmYes();
           }, 1000);
         }
         else {
@@ -140,8 +157,8 @@ $(document).ready(function () {
         imageAlt: "Custom image",
         type: "input",
         showCancelButton: true,
-        confirmButtonColor: "#fe8a71",
-        cancelButtonColor: "#f6cd61",
+        confirmButtonColor: "#66ea4c",
+        cancelButtonColor: "#EA4C89",
         confirmButtonText: "Hết iu thật rồi",
         cancelButtonText: "Đùa thôi vẫn còn iu nhắm",
         closeOnClickOutside: false,
@@ -152,7 +169,7 @@ $(document).ready(function () {
           confirmNo();
         }
         else{
-          alert("Anh cũng iu em nhắm")
+          confirmYes();
         }
       });
     }
@@ -183,47 +200,16 @@ $(document).ready(function () {
     var audio = new Audio("sound/tick.mp3");
     audio.play();
     Swal.fire({
-      title: textConfig.text7,
-      html: true,
-      width: 900,
-      padding: "3em",
-      html: "<input type='text' class='form-control' id='txtReason'  placeholder='Whyyy'>",
+      title: "T beo cũng iu KH nhất",
+      text: "Anh có chiếc video này muốn gửi đến em này...",
+      imageUrl: "img/tom-jerry.png",
+      imageWidth: 300,
+      imageHeight: 300,
       background: '#fff url("img/iput-bg.jpg")',
-      backdrop: `
-                    rgba(0,0,123,0.4)
-                    url("img/giphy2.gif")
-                    left top
-                    no-repeat
-                  `,
-      showCancelButton: false,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonColor: "#fe8a71",
-      cancelButtonColor: "#f6cd61",
-      confirmButtonText: textConfig.text8,
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire({
-          width: 900,
-          confirmButtonText: textConfig.text12,
-          background: '#fff url("img/iput-bg.jpg")',
-          title: textConfig.text10,
-          text: textConfig.text11,
-          confirmButtonColor: "#83d0c9",
-          onClose: () => {
-            window.location = "http://fb.com";
-          },
-        });
-      }
-    });
-
-    $("#txtReason").focus(function () {
-      var handleWriteText = setInterval(function () {
-        textGenerate();
-      }, 10);
-      $("#txtReason").blur(function () {
-        clearInterval(handleWriteText);
-      });
+      imageAlt: "Custom image",
+      confirmButtonText: "Xem luôn",
+    }).then(function () {
+      window.location = "./img/tiktok.mp4"
     });
   });
 });
