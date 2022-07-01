@@ -189,7 +189,7 @@ $(document).ready(function () {
       imageAlt: "Custom image",
       confirmButtonText: "Xem luôn",
     }).then(function () {
-      window.location = "./img/tiktok.mp4"
+      window.location = "./img/toi-va-em.mp4"
     });
   });
 });
