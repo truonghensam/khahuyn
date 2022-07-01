@@ -47,7 +47,7 @@ $(document).ready(function () {
 
   // switch button position
   function switchButton() {
-    var audio = new Audio("sound/duck.mp3");
+    var audio = new Audio("sound/ua.mp3");
     audio.play();
     var leftNo = $("#no").css("left");
     var topNO = $("#no").css("top");
@@ -106,7 +106,7 @@ $(document).ready(function () {
       imageAlt: "Custom image",
       confirmButtonText: "Xem luôn",
     }).then(function () {
-      window.location = "./img/tiktok.mp4"
+      window.location = "./img/toi-va-em.mp4"
     });
   }
 
@@ -173,26 +173,6 @@ $(document).ready(function () {
         }
       });
     }
-  }
-
-  // generate text in input
-  function textGenerate() {
-    var n = "";
-    var text = " " + textConfig.text9;
-    var a = Array.from(text);
-    var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
-    var count = textVal.length;
-    if (count > 0) {
-      for (let i = 1; i <= count; i++) {
-        n = n + a[i];
-        if (i == text.length + 1) {
-          $("#txtReason").val("");
-          n = "";
-          break;
-        }
-      }
-    }
-    $("#txtReason").val(n);
   }
 
   // show popup
